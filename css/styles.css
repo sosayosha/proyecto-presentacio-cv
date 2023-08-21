@@ -2,7 +2,7 @@
 
 
 header {
-    background-color: #fbfbfb;
+    background-color: #f4fcfc;
     display: flex;
     padding: 16px;
     height: 90px;
@@ -10,16 +10,59 @@ header {
     position: fixed;
     top: 0%;
     left: 0%;
-    box-shadow:0 3px 10px 5px; 
-    color:#5f5f5f;
+    box-shadow: 0 3px 10px 5px;
+    color: #cc50b7;
     align-items: center;
+   
+
+
 }
+
+body.dark {background-color: #292c35;} 
+
+body.dark , body.dark .support a {color: #fff;}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .checkbox-label {
+    background-color: #111;
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .fa-moon {color: #f1c40f;}
+  
+  .fa-sun {color: #f39c12;}
+  
+  .checkbox-label .ball {
+    background-color: #fff;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+  }
+  
+  .checkbox:checked + .checkbox-label .ball {
+    transform: translateX(24px);
+  }
+  
 
 nav {
     max-height: 90px;
 }
-
-/* Para quitar los puntos a los items de listas */
 ul {
     list-style: none;
 }
@@ -30,8 +73,8 @@ ul#menu {
     font-size: 20px;
 }
 
-.logo{
-    max-height: 90px;
+.logo {
+    max-height: 100px;
     max-width: 100%;
     height: auto;
     width: auto;
@@ -45,29 +88,54 @@ div {
     overflow: hidden;
 }
 
-li.menu-item a{
+#menu-btn {
+background-color: transparent;
+border: 0;
+outline: 0;
+font-size: 26px;
+width: 30px;
+height: 30px;
+
+}
+i#close-menu{
+    display: none;
+}
+
+
+li.menu-item a {
     padding: 16px;
     display: flex;
     align-items: center;
 }
 
-body{
-font-family:'lato'sans-serif;
-font-size: 18px;
-line-height: 1,2;
-background-color: #fbfbfb;
-color: #0f0f0f;
+li.menu-item:hover {
+    background-color: #ddafd4;
+    color: #0f0f0f;
+    transition: backgroud-color 0.2s;
+}
+
+
+body {
+    font-family: 'lato' sans-serif;
+    font-size: 18px;
+    line-height: 1, 2;
+    background-color: #e1c6c6;
+    color: #0f0f0f;
 
 }
 
-#inicio > figure > img {
-    border-radius: 50%;
+#inicio>figure>img {
+    border-radius:50%;
+  
+
 }
+
 
 #menu {
     justify-content: space-around;
     align-content: center;
     justify-content: center;
+
 }
 
 
@@ -83,7 +151,6 @@ color: #0f0f0f;
 }
 
 
-
 #ul-header {
     list-style: none;
     display: flex;
@@ -93,7 +160,13 @@ color: #0f0f0f;
 ul#contacto-links li {
     margin: 16px;
     padding: 8px;
-    border: radius 4px; ;
+    border: radius 4px;
+    ;
+}
+
+ul#contacto-links li:hover {
+
+    background-color: #c88cbb;
 }
 
 ul#contacto-links {
@@ -101,8 +174,6 @@ ul#contacto-links {
     margin-top: 20px;
 }
 
-
-/* Para que los enlaces hereden el color de texto y no tengan subrayado */
 a {
     text-decoration: none;
     color: inherit;
@@ -112,84 +183,140 @@ section#inicio {
     justify-content: space-around;
 }
 
-section{
+section {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: left;
     align-items: center;
     padding: 16px;
     padding-top: 120px;
     min-height: 100vh;
 }
 
-section#contacto{
-text-align: center;
 
+
+section#contacto {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 article {
-    text-align: center;
+    text-align: left;
+   
 }
 
 .boton-cv {
-    font-size:20px;
-    background-color: #af599e;
-    color: #fbfbfb;
+    font-size: 20px;
+    background-color: #d7a2cc;
+    color: #141414;
     border-radius: 50px;
     padding: 12px 20px;
     display: inline-block;
 }
 
+.boton-cv:hover {
+    background-color: #f38ddd;
+    color: #0f0f0f;
+}
+
 body {
     font-family: 'Lato', sans-serif;
     font: size 18px;
-    line-height: 1, 2%;
+    line-height: 1,5%;
     background-color: #fbfbfb;
     color: #0f0f0f;
 }
 
-/* Este max-width es para que el contenido no se "estire" demasiado hacia los costados y
-*  el margin: auto; para tenerlo centrado fácilmente ;)
-*/
 main {
     max-width: 1200px;
     margin: auto;
 }
 
-p{
+p {
     padding-bottom: 15%;
-    text-align:center;
-    margin: 16px,0;
+    text-align: left;
+    margin: 16px, 0;
+   
 }
 
-article.presentacion{
+article.presentacion {
     width: 100px;
-    text-align: center;
+    text-align: left;
 }
 
 article.hablemos {
-    background: rgb(175, 89, 158, 0.3);
+    background: rgba(225, 182, 217, 0.3);
     text-align: center;
     padding: 20px;
     border-radius: 10px;
     max-width: 600px;
 }
-h1{
+
+h1 {
     padding: 10%;
     font-size: 36px;
-    text-align: center;
+    text-align: left;
 }
 
-h2{
-    font-size: 28px;
+h2 {
+    font-size:10px;
 }
 
-footer{
+footer {
     height: 90px;
-    display:flex;
-    justify-content:center;
-    background-color:#af599e ;
-    color: #fbfbfb;
+    display: flex;
+    justify-content: center;
+    background-color: #ef8cdc;
+    color: #1c1a1a;
 }
+
+@media(min-width:1024px) {
+
+
+    article.hola {
+        text-align: left;
+        width: 50%;
+    }
+   
+    h1{
+        font-size: 48px;
+    }
+
+    h2{
+        font-size: 32px;
+    }
+}
+
+@media(max-width:800px) {
+
+    section {
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    article.hola {
+        text-align: left;
+        width: 30%;
+    }
+   
+    h1{
+        font-size: 48px;
+    }
+
+    h2{
+        font-size: px;
+    }
+}
+
+
+
+
+
+
+
 
 
